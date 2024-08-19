@@ -4,6 +4,7 @@ using namespace std;
 typedef long long ll;
 
 ll arr[200000 + 2];
+
 int main() {
     ll n;
     cin >> n;
