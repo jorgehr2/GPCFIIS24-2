@@ -20,23 +20,25 @@ const long double PI = acos(-1.0);
 typedef long double ld;
 typedef unsigned long long ull;
 
-ll arr[200000 + 2];
-
+vector<ll> vec;
 int main() {
     inic;
     inic2;
     ll n;
     cin >> n;
-    for (ll i = 1; i < n; i++) {
+    for (ll i = 1; i <= n; i++) {
         ll num;
         cin >> num;
-        arr[num]++;
+        vec.push_back(num);
     }
-    for (ll i = 1; i <= n; i++) {
-        if (arr[i] == 0) {
-            cout << i << endl;
-            break;
+    sort(vec.begin(), vec.end());
+    ll actual = 0, rp = 0;
+    for (auto x : vec) {
+        if (x >= actual) {
+            rp++;
+            actual += x;
         }
     }
+    cout << rp << endl;
     return 0;
 }

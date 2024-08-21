@@ -20,23 +20,19 @@ const long double PI = acos(-1.0);
 typedef long double ld;
 typedef unsigned long long ull;
 
-ll arr[200000 + 2];
-
 int main() {
     inic;
     inic2;
-    ll n;
-    cin >> n;
-    for (ll i = 1; i < n; i++) {
+    ll n, x;
+    cin >> n >> x;
+    ll tot = 0;
+    for (ll i = 1; i <= n; i++) {
         ll num;
         cin >> num;
-        arr[num]++;
-    }
-    for (ll i = 1; i <= n; i++) {
-        if (arr[i] == 0) {
-            cout << i << endl;
-            break;
+        if (num <= x) {
+            tot += num;
         }
     }
+    cout << tot << endl;
     return 0;
 }

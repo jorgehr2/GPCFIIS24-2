@@ -20,23 +20,22 @@ const long double PI = acos(-1.0);
 typedef long double ld;
 typedef unsigned long long ull;
 
-ll arr[200000 + 2];
-
 int main() {
     inic;
     inic2;
-    ll n;
-    cin >> n;
-    for (ll i = 1; i < n; i++) {
-        ll num;
-        cin >> num;
-        arr[num]++;
-    }
-    for (ll i = 1; i <= n; i++) {
-        if (arr[i] == 0) {
-            cout << i << endl;
-            break;
+    string s;
+    cin >> s;
+    char anterior = '#';
+    ll cant_max = -1, actual = 0;
+    for (ll i = 0; i < s.size(); i++) {
+        if (s[i] != anterior) {
+            actual = 1;
+        } else {
+            actual++;
         }
+        anterior = s[i];
+        cant_max = max(cant_max, actual); // Siempre se actualiza la máxima cantidad
     }
+    cout << cant_max << endl;
     return 0;
 }

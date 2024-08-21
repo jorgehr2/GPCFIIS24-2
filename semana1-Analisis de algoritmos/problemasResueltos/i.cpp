@@ -11,8 +11,8 @@ typedef long long ll;
 #define Repi0(i, n) for (ll i = n - 1; i >= 0; i--)
 #define Repi1(i, n) for (ll i = n; i >= 1; i--)
 #define POT(x) ((x) * (x))
-const ll MX = 1e5 + 5;
-const ll MOD = 998244353;
+const ll MX = 2e5 + 5;
+const ll MOD = 1e9 + 7;
 const ll INF = 1e18;
 const long double INF_DOUBLE = 1e18 / 1.0;
 const long double EPS = 1e-8;
@@ -20,23 +20,37 @@ const long double PI = acos(-1.0);
 typedef long double ld;
 typedef unsigned long long ull;
 
-ll arr[200000 + 2];
+vector<ll> v;
+vector<ll> low;
+bool a[500005];
+ll n, error, e, vis, c, i, j;
 
 int main() {
     inic;
     inic2;
-    ll n;
     cin >> n;
-    for (ll i = 1; i < n; i++) {
-        ll num;
-        cin >> num;
-        arr[num]++;
+    for (i = 0; i < n; i++) {
+        cin >> e;
+        v.push_back(e);
     }
-    for (ll i = 1; i <= n; i++) {
-        if (arr[i] == 0) {
-            cout << i << endl;
-            break;
-        }
+    sort(v.begin(), v.end());
+
+    j = n / 2;
+    i = 0;
+    while (i < n && j < n) {
+        if (v[j] >= v[i] * 2 && a[i] == 0 && a[j] == 0) {
+            a[i] = 1;
+            a[j] = 1;
+            j++;
+            i++;
+        } else j++;
     }
+
+    for (i = 0; i < n; i++) {
+        // cout << a[i] << " ";
+        if (a[i] == 0) vis++;
+        if (a[i] == 1) c++;
+    }
+    cout << vis + c / 2 << endl;
     return 0;
 }
