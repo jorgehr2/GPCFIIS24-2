@@ -65,7 +65,7 @@ int main() {
     } else {
         cout << "No hay respuesta" << endl;
     }
-
+    // Busqueda binaria continua
     ll n2, target2;
     cin >> n2 >> target2;
     ll iteraciones = 80;
