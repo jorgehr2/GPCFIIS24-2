@@ -71,11 +71,11 @@ int main() {
     ll iteraciones = 80;
     double ini2 = 1, fin2 = n2;
     for (ll i = 1; i <= iteraciones; i++) {
-        double med = (ini2 + fin2) / 2;
-        if (f(med) < target) {
-            ini = med + 1;
+        double med2 = (ini2 + fin2) / 2;
+        if (f2(med2) < target) {
+            ini2 = med2 + 1;
         } else {
-            fin = med;
+            fin2 = med2;
         }
     }
     if (f2(ini2) >= target2) {
