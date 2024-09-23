@@ -27,7 +27,7 @@ bool canSetTheSquare(int row, int col_value){
     // Check any queen in the right diagonal
     /*+--------+*/
     /*|****Q***|*/
-    /*|********|*/
+    /*|***Q****|*/
     /*|**Q*****|*/
     /*+--------+*/
     for(int r = 0; r < row; r++){
