@@ -15,8 +15,8 @@ int dp(int pos, int cur_cap){
     if(ans != -1){
         return ans;
     }
-    ans = dp(pos + 1, cur_cap); // don't take the pos item
-    if(cur_cap >= w[pos]){ // take the pos item
+    ans = dp(pos + 1, cur_cap); // don't take the 'pos'-item
+    if(cur_cap >= w[pos]){ // take the 'pos'-item
         ans = max(ans, b[pos] + dp(pos + 1, cur_cap - w[pos]));
     }
     return ans;
