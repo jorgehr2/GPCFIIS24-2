@@ -73,7 +73,7 @@ int main() {
     for (ll i = 1; i <= iteraciones; i++) {
         double med2 = (ini2 + fin2) / 2;
         if (f2(med2) < target) {
-            ini2 = med2 + 1;
+            ini2 = med2;
         } else {
             fin2 = med2;
         }
